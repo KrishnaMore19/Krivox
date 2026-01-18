@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/animations/FadeIn';
@@ -5,11 +7,6 @@ import { ServiceDetail } from '@/components/services/ServiceDetail';
 import { CTASection } from '@/components/home/CTASection';
 import { Button } from '@/components/ui/button';
 import { servicePillars } from '@/lib/data/services';
-
-export const metadata = {
-  title: 'Lead Generation & Growth - KRIVOX',
-  description: 'Meta ads, YouTube marketing, lead generation systems, and market research',
-};
 
 export default function LeadGenerationPage() {
   const pillar = servicePillars.find(p => p.id === '2');

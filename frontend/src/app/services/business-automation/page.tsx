@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/animations/FadeIn';
@@ -5,11 +7,6 @@ import { ServiceDetail } from '@/components/services/ServiceDetail';
 import { CTASection } from '@/components/home/CTASection';
 import { Button } from '@/components/ui/button';
 import { servicePillars } from '@/lib/data/services';
-
-export const metadata = {
-  title: 'Business Automation & Operations - KRIVOX',
-  description: 'Virtual assistants, management systems, data handling, and automation',
-};
 
 export default function BusinessAutomationPage() {
   const pillar = servicePillars.find(p => p.id === '3');

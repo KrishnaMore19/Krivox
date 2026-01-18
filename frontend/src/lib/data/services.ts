@@ -1,5 +1,3 @@
-'use client';
-
 // Services data for KRIVOX
 import { 
   Layout, TrendingUp, Zap, Code,

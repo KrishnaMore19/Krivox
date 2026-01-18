@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { FadeIn } from '@/components/animations/FadeIn';
@@ -5,11 +7,6 @@ import { ServiceDetail } from '@/components/services/ServiceDetail';
 import { CTASection } from '@/components/home/CTASection';
 import { Button } from '@/components/ui/button';
 import { servicePillars } from '@/lib/data/services';
-
-export const metadata = {
-  title: 'Tech & Advanced Solutions - KRIVOX',
-  description: 'App development, custom dashboards, and finance tech support',
-};
 
 export default function TechSolutionsPage() {
   const pillar = servicePillars.find(p => p.id === '4');

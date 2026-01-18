@@ -39,7 +39,7 @@ export function ServicePillars() {
                       className="p-3 rounded-lg"
                       style={{ backgroundColor: `${pillar.color}20` }}
                     >
-                      <Icon className="w-8 h-8" style={{ color: pillar.color }} />
+                      <Icon size={32} color={pillar.color} />
                     </div>
                     <span className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-600">
                       {pillar.services.length} Services
