@@ -9,10 +9,16 @@ import type { Service } from '@/types/service';
 
 interface ServiceCardProps {
   service: Service;
+  pillarSlug?: string; // Add pillar slug to know which page to link to
 }
 
-export function ServiceCard({ service }: ServiceCardProps) {
+export function ServiceCard({ service, pillarSlug }: ServiceCardProps) {
   const Icon = service.icon;
+  
+  // Determine the link based on whether we have a pillar slug
+  const serviceLink = pillarSlug 
+    ? `/services/${pillarSlug}#${service.slug}` 
+    : `/services/${service.slug}`;
   
   return (
     <Card className="group hover-lift h-full flex flex-col">
@@ -49,7 +55,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
       </CardContent>
 
       <CardFooter>
-        <Link href={`/services/${service.slug}`} className="w-full">
+        <Link href={serviceLink} className="w-full">
           <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
             Learn More
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

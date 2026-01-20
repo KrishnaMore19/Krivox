@@ -10,6 +10,14 @@ import { servicePillars } from '@/lib/data/services';
 import { Button } from '@/components/ui/button';
 
 export default function ServicesPage() {
+  // Map pillar IDs to slugs
+  const pillarSlugs: { [key: string]: string } = {
+    '1': 'digital-presence',
+    '2': 'lead-generation',
+    '3': 'business-automation',
+    '4': 'tech-solutions',
+  };
+
   return (
     <div className="pt-0">
       {/* Hero Section - FULLY RESPONSIVE */}
@@ -31,63 +39,71 @@ export default function ServicesPage() {
                 </h1>
 
                 <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed px-4">
-                  From website design to complete automation – everything you need to establish, grow, and scale your business online.
+                  From website design to complete automation — everything you need to establish, grow, and scale your business online.
                 </p>
               </div>
             </FadeIn>
 
-            {/* Service Categories Grid - RESPONSIVE */}
+            {/* Service Categories Grid - RESPONSIVE WITH LINKS */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {/* Development Card */}
               <FadeIn delay={0.1}>
-                <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center">
-                  <div className="w-10 h-10 sm:w-14 sm:h-14 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-4">
-                    <Code className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+                <Link href="/services/digital-presence">
+                  <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center cursor-pointer">
+                    <div className="w-10 h-10 sm:w-14 sm:h-14 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-4">
+                      <Code className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+                    </div>
+                    <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">Development</h3>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed hidden sm:block">
+                      Websites & Apps
+                    </p>
                   </div>
-                  <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">Development</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed hidden sm:block">
-                    Websites & Apps
-                  </p>
-                </div>
+                </Link>
               </FadeIn>
 
               {/* Marketing Card */}
               <FadeIn delay={0.2}>
-                <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center">
-                  <div className="w-10 h-10 sm:w-14 sm:h-14 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-4">
-                    <Megaphone className="w-5 h-5 sm:w-7 sm:h-7 text-green-600" />
+                <Link href="/services/lead-generation">
+                  <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center cursor-pointer">
+                    <div className="w-10 h-10 sm:w-14 sm:h-14 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-4">
+                      <Megaphone className="w-5 h-5 sm:w-7 sm:h-7 text-green-600" />
+                    </div>
+                    <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">Marketing</h3>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed hidden sm:block">
+                      SEO & Advertising
+                    </p>
                   </div>
-                  <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">Marketing</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed hidden sm:block">
-                    SEO & Advertising
-                  </p>
-                </div>
+                </Link>
               </FadeIn>
 
               {/* Automation Card */}
               <FadeIn delay={0.3}>
-                <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center">
-                  <div className="w-10 h-10 sm:w-14 sm:h-14 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-4">
-                    <Zap className="w-5 h-5 sm:w-7 sm:h-7 text-orange-600" />
+                <Link href="/services/business-automation">
+                  <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center cursor-pointer">
+                    <div className="w-10 h-10 sm:w-14 sm:h-14 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-4">
+                      <Zap className="w-5 h-5 sm:w-7 sm:h-7 text-orange-600" />
+                    </div>
+                    <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">Automation</h3>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed hidden sm:block">
+                      CRM & Workflows
+                    </p>
                   </div>
-                  <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">Automation</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed hidden sm:block">
-                    CRM & Workflows
-                  </p>
-                </div>
+                </Link>
               </FadeIn>
 
               {/* Support Card */}
               <FadeIn delay={0.4}>
-                <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center">
-                  <div className="w-10 h-10 sm:w-14 sm:h-14 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-4">
-                    <Headphones className="w-5 h-5 sm:w-7 sm:h-7 text-purple-600" />
+                <Link href="/services/tech-solutions">
+                  <div className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 text-center cursor-pointer">
+                    <div className="w-10 h-10 sm:w-14 sm:h-14 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2 sm:mb-4">
+                      <Headphones className="w-5 h-5 sm:w-7 sm:h-7 text-purple-600" />
+                    </div>
+                    <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">Support</h3>
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed hidden sm:block">
+                      Maintenance & Help
+                    </p>
                   </div>
-                  <h3 className="text-sm sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">Support</h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed hidden sm:block">
-                    Maintenance & Help
-                  </p>
-                </div>
+                </Link>
               </FadeIn>
             </div>
 
@@ -137,39 +153,55 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Service Pillars */}
-      {servicePillars.map((pillar, pillarIndex) => (
-        <section
-          key={pillar.id}
-          id={pillarIndex === 0 ? 'services' : undefined}
-          className={pillarIndex % 2 === 0 ? 'py-20 bg-white' : 'py-20 bg-gray-50'}
-        >
-          <div className="container mx-auto px-4">
-            <FadeIn>
-              <div className="text-center max-w-3xl mx-auto mb-12">
-                <div
-                  className="inline-flex items-center space-x-2 rounded-full px-4 py-2 mb-4"
-                  style={{ backgroundColor: `${pillar.color}20` }}
-                >
-                  <span className="font-medium" style={{ color: pillar.color }}>
-                    {pillar.tagline}
-                  </span>
+      {/* Service Pillars - Each links to its specific page */}
+      {servicePillars.map((pillar, pillarIndex) => {
+        const pillarSlug = pillarSlugs[pillar.id];
+        
+        return (
+          <section
+            key={pillar.id}
+            id={pillarIndex === 0 ? 'services' : undefined}
+            className={pillarIndex % 2 === 0 ? 'py-20 bg-white' : 'py-20 bg-gray-50'}
+          >
+            <div className="container mx-auto px-4">
+              <FadeIn>
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                  <div
+                    className="inline-flex items-center space-x-2 rounded-full px-4 py-2 mb-4"
+                    style={{ backgroundColor: `${pillar.color}20` }}
+                  >
+                    <span className="font-medium" style={{ color: pillar.color }}>
+                      {pillar.tagline}
+                    </span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    {pillar.title}
+                  </h2>
+                  <p className="text-lg text-gray-600 mb-6">{pillar.description}</p>
+                  
+                  {/* Link to specific pillar page */}
+                  <Link href={`/services/${pillarSlug}`}>
+                    <Button variant="outline" size="lg">
+                      View All {pillar.title} Services
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </Link>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  {pillar.title}
-                </h2>
-                <p className="text-lg text-gray-600">{pillar.description}</p>
-              </div>
-            </FadeIn>
+              </FadeIn>
 
-            <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {pillar.services.map((service) => (
-                <ServiceCard key={service.id} service={service} />
-              ))}
-            </StaggerChildren>
-          </div>
-        </section>
-      ))}
+              <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {pillar.services.map((service) => (
+                  <ServiceCard 
+                    key={service.id} 
+                    service={service} 
+                    pillarSlug={pillarSlug}
+                  />
+                ))}
+              </StaggerChildren>
+            </div>
+          </section>
+        );
+      })}
 
       {/* Pricing CTA */}
       <section className="py-20 bg-gray-50">

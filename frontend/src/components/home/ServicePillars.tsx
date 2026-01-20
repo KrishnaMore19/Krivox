@@ -9,6 +9,14 @@ import { StaggerChildren } from '@/components/animations/StaggerChildren';
 import { servicePillars } from '@/lib/data/services';
 
 export function ServicePillars() {
+  // Map pillar IDs to slugs
+  const pillarSlugs: { [key: string]: string } = {
+    '1': 'digital-presence',
+    '2': 'lead-generation',
+    '3': 'business-automation',
+    '4': 'tech-solutions',
+  };
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -26,6 +34,7 @@ export function ServicePillars() {
         <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {servicePillars.map((pillar) => {
             const Icon = pillar.icon;
+            const pillarSlug = pillarSlugs[pillar.id];
             
             return (
               <Card
@@ -68,7 +77,8 @@ export function ServicePillars() {
                     )}
                   </div>
 
-                  <Link href="/services">
+                  {/* Updated Link - Goes to specific pillar page */}
+                  <Link href={`/services/${pillarSlug}`}>
                     <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
                       Explore Services
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
