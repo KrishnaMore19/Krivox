@@ -15,7 +15,7 @@ export default function BusinessAutomationPage() {
   return (
     <div className="pt-0">
       {/* Hero Section - FULLY RESPONSIVE */}
-      <section className="pt-20 sm:pt-24 pb-8 sm:pb-12 min-h-screen flex items-center bg-linear-to-br from-orange-50 via-amber-50 to-white">
+      <section className="pt-20 sm:pt-24 pb-8 sm:pb-12 min-h-screen flex items-center bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             {/* Center Content */}
@@ -125,7 +125,7 @@ export default function BusinessAutomationPage() {
       </section>
 
       {/* Why Choose This Section */}
-      <section className="py-20 bg-linear-to-br from-orange-50 to-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <FadeIn>
             <div className="max-w-4xl mx-auto text-center">
